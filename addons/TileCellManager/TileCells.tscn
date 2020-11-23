@@ -1,0 +1,193 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/TileCellManager/TileCells.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StreamTexture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.337255, 0.364706, 0.427451, 1 )
+
+[node name="TileCells" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 220 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -47.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="ItemList" parent="HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 200, 200 )
+size_flags_vertical = 0
+custom_styles/selected_focus = SubResource( 1 )
+custom_styles/bg_focus = SubResource( 2 )
+custom_styles/cursor_unfocused = SubResource( 3 )
+custom_styles/selected = SubResource( 4 )
+items = [ "", SubResource( 5 ), false ]
+allow_reselect = true
+auto_height = true
+fixed_icon_size = Vector2( 192, 192 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 204.0
+margin_right = 448.0
+margin_bottom = 553.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_right = 244.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 120.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 120, 0 )
+custom_styles/focus = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Id"
+flat = true
+align = 0
+
+[node name="Label" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 124.0
+margin_right = 182.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_colors/cursor_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
+align = 1
+editable = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 186.0
+margin_right = 244.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 244.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 120.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 120, 0 )
+custom_styles/focus = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Name"
+flat = true
+align = 0
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 124.0
+margin_right = 244.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Empty"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 244.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 120.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 120, 0 )
+custom_styles/focus = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Z-Index"
+flat = true
+align = 0
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 124.0
+margin_right = 244.0
+margin_bottom = 24.0
+rect_clip_content = true
+size_flags_horizontal = 3
+allow_greater = true
+allow_lesser = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 244.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer9"]
+margin_right = 120.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 120, 0 )
+custom_styles/focus = SubResource( 6 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Modulate"
+flat = true
+align = 0
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="HBoxContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 124.0
+margin_right = 244.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer/HBoxContainer2/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/HBoxContainer3/SpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="color_changed" from="HBoxContainer/VBoxContainer/HBoxContainer9/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
